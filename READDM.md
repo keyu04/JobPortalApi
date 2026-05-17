@@ -121,3 +121,47 @@ Controller → Service → Repository → Database
 ```bash
 git clone https://github.com/keyu04/JobPortalApi.git
 cd JobPortalApi
+```
+
+### 2. Restore Dependencies
+
+```bash
+dotnet restore
+```
+
+### 3. Configure Database
+
+Update your connection string inside:
+
+```
+appsettings.json
+```
+
+### 4. Apply Migrations
+
+```bash
+dotnet ef database update
+```
+
+### 5. Run Application
+
+```bash
+dotnet run
+```
+
+---
+
+## Future Improvements
+
+- Docker Containerization
+- Unit Testing
+- CI/CD Pipeline Integration
+- Swagger API Documentation Enhancement
+- Refresh Token Authentication
+
+---
+
+## Author
+
+Developed by Keyur Halpati
+GitHub: https://github.com/keyu04
