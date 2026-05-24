@@ -1,5 +1,5 @@
 using JobPortalAPI.DTOs;
-using JobPortalAPI.Migrations;
+// using JobPortalAPI.Migrations;
 using JobPortalAPI.Models;
 using JobPortalAPI.Repositories.Interfaces;
 using JobPortalAPI.Services.Interfaces;
@@ -21,7 +21,7 @@ public class JobService(IJobRepositories JobRepositories, AppDbContext appDbCont
             Title = job.Title,
             Skills = job.Skills,
             Location = job.Location,
-            Experince = job.Experince,
+            Experience = job.Experience,
             Vacancy = job.Vacancy
         };
         var resutl = await _JobRepositories.AddJob(newJobs);
@@ -38,7 +38,7 @@ public class JobService(IJobRepositories JobRepositories, AppDbContext appDbCont
         {
             Title = job.Title,
             Skills = job.Skills,
-            Experince = job.Experince,
+            Experience = job.Experience,
             Location = job.Location,
             Vacancy = job.Vacancy
         };
@@ -81,6 +81,7 @@ public class JobService(IJobRepositories JobRepositories, AppDbContext appDbCont
         };
         _logger.LogInformation("Enter JobService JobApply");
         var result = await _JobRepositories.JobApply(JobApply);
+        await _appDbContext.SaveChangesAsync();
         _logger.LogInformation("Exit JobService JobApply");
         return result;
     }

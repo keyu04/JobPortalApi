@@ -40,7 +40,7 @@ namespace JobPortalAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("JobApplicants", (string)null);
+                    b.ToTable("JobApplicants");
                 });
 
             modelBuilder.Entity("JobPortalAPI.Models.Jobs", b =>
@@ -51,7 +51,7 @@ namespace JobPortalAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Experince")
+                    b.Property<int>("Experience")
                         .HasColumnType("int");
 
                     b.Property<string>("Location")
@@ -68,7 +68,7 @@ namespace JobPortalAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Jobs", (string)null);
+                    b.ToTable("Jobs");
                 });
 
             modelBuilder.Entity("JobPortalAPI.Models.User", b =>
@@ -105,7 +105,7 @@ namespace JobPortalAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User", (string)null);
+                    b.ToTable("User");
                 });
 #pragma warning restore 612, 618
         }

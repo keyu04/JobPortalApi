@@ -17,7 +17,7 @@ public class JobRepositories(AppDbContext appDbContext) : IJobRepositories
             query = query.Where(result =>
                 result.Title!.Contains(searchTerm) ||
                 result.Location!.Contains(searchTerm) ||
-                result.Experince.ToString().Contains(searchTerm) ||
+                result.Experience.ToString().Contains(searchTerm) ||
                 result.Vacancy.ToString().Contains(searchTerm)
             );
         }
@@ -34,7 +34,7 @@ public class JobRepositories(AppDbContext appDbContext) : IJobRepositories
             Result = result.Select(Job => new Job
             {
                 Title = Job.Title,
-                Experince = Job.Experince,
+                Experience = Job.Experience,
                 Location = Job.Location,
                 Vacancy = Job.Vacancy,
                 Skills = Job.Skills
@@ -50,7 +50,7 @@ public class JobRepositories(AppDbContext appDbContext) : IJobRepositories
         var JobDetails = new Job()
         {
             Title = result!.Title,
-            Experince = result!.Experince,
+            Experience = result!.Experience,
             Location = result!.Location,
             Skills = result!.Skills,
             Vacancy = result!.Vacancy

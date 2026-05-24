@@ -16,13 +16,13 @@ public class UserController(IUserService userService) : ControllerBase
         {
             return NotFound();
         }
-        return Ok(result);
+        return Ok(ResponseGenerator.Success(result));
     }
 
     [HttpPost("UserRegister")]
     public async Task<IActionResult> UserRegister(UserRegister userRegister)
     {
         var result = await _userService.RegisterUser(userRegister);
-        return Ok(result);
+        return Ok(ResponseGenerator.Success(result));
     }
 }

@@ -9,7 +9,7 @@ public class Job
     [Required]
     public int Vacancy { set; get; }
     [Required]
-    public int Experince { set; get; }
+    public int Experience { set; get; }
     [Required]
     public string? Location { set; get; }
     [Required]

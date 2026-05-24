@@ -12,6 +12,14 @@ public class UserRepositories(AppDbContext appDbContext) : IUserRepositories
     {
         try
         {
+            if (userRegister.Email != null)
+            {
+                var emailExists = await _appDbContext.User.AnyAsync(user => user.Email == userRegister.Email);
+                if (emailExists)
+                {
+                    return "Email already exists.";
+                }
+            }
             await _appDbContext.User.AddAsync(userRegister);
             return "User registered successfully.";
         }
